@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="https://i.postimg.cc/7Znjydx5/THE-STORE.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://i.postimg.cc/7Znjydx5/THE-STORE.png" type="image/png" />
   <title>The One Store</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,7 +25,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 1rem 0;
+      padding: 1rem 0 0;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       z-index: 1000;
@@ -41,7 +41,27 @@
       0% { color: #ffffff; text-shadow: 0 0 5px #fff, 0 0 10px #ff00cc, 0 0 15px #ff00cc; }
       100% { color: #ffccff; text-shadow: 0 0 8px #cc00ff, 0 0 20px #cc00ff, 0 0 30px #cc00ff; }
     }
-    main { margin-top: 120px; padding: 1rem; }
+    .scrolling-banner {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      color: #333;
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      position: relative;
+    }
+    .scrolling-banner span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scrollBanner 20s linear infinite;
+    }
+    @keyframes scrollBanner {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+    main { margin-top: 160px; padding: 1rem; }
     .product-card {
       background-color: white;
       border-radius: 20px;
@@ -87,6 +107,10 @@
       font-size: 1.2rem;
       font-weight: bold;
       color: #ff0066;
+      background-color: #f2f2f2;
+      border: 2px solid black;
+      padding: 0.5rem;
+      border-radius: 10px;
     }
     @media (max-width: 500px) {
       header h1 { font-size: 1.5rem; }
@@ -95,40 +119,61 @@
     }
   </style>
   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-60ZR6D2987"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-60ZR6D2987');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-60ZR6D2987"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-60ZR6D2987');
+  </script>
 </head>
 <body>
   <header>
     <h1>The One Store</h1>
+    <div class="scrolling-banner">
+      <span>🎉 Καλώς ήρθες στο The One Store! Αγόρασε μοναδικά προϊόντα με PayPal – Γρήγορα, Εύκολα, Ασφαλώς!</span>
+    </div>
   </header>
 
-  <!-- 🔹 Banner Καλωσορίσματος + Χρονόμετρο -->
-  <div style="background-color: rgba(255, 255, 255, 0.85); padding: 1rem 2rem; margin-top: 80px; margin-bottom: -40px; border-radius: 20px; max-width: 800px; margin-left: auto; margin-right: auto; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
-    <h2 style="color: #333; font-size: 1.4rem; margin-bottom: 0.5rem;">🎉 Καλώς ήρθες στο The One Store!</h2>
-    <p style="color: #444; font-size: 1rem;">
-      Εδώ θα βρεις μοναδικά προϊόντα με άμεση αγορά μέσω PayPal. Δες τις λεπτομέρειες κάθε προϊόντος και πάτησε <strong>«Αγόρασέ το»</strong> για να ολοκληρώσεις τη συναλλαγή με ασφάλεια και ταχύτητα.
-    </p>
-    <div id="countdown">Φόρτωση χρόνου...</div>
-  </div>
+
+
 
   <!-- 🔹 Προϊόν -->
   <main>
     <section class="product-card">
-      <img src="https://i.postimg.cc/MG1f90xb/Screenshot-2025-07-29-22-13-56-361-edit-com-einnovation-temu.jpg" alt="Μίνι προτζεκτέρ 1080P">
+<!-- 🔹 Banner Καλωσορίσματος + Χρονόμετρο -->
+<div style="background-color: rgba(255, 255, 255, 0.85); padding: 1rem 1rem; margin-top: 2px; margin-bottom: 40px; border-radius: 20px; max-width: 500px; margin-left: auto; margin-right: auto; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
+  <div id="countdown">Φόρτωση χρόνου...</div>
+</div>
+      <img src="https://i.postimg.cc/MG1f90xb/Screenshot-2025-07-29-22-13-56-361-edit-com-einnovation-temu.jpg" alt="Μίνι προτζεκτέρ 1080P" />
       <h2>Μίνι προτζέκτορας 1080P</h2>
       <p class="description">Συμβατό με κινητά τηλέφωνα, USB και SD είσοδοι, αναλογία 16:9, με τηλεχειριστήριο, κατάλληλο για σινεμά στο σπίτι.</p>
       <p class="price">Τιμή: 39,99€</p>
       <form action="https://www.paypal.com/ncp/payment/MQE95AJLVL9AN" method="get" target="_blank">
         <button type="submit">Αγόρασέ το μέσω PayPal</button>
       </form>
+<!-- 🔹 Κοινοποίηση σε social -->
+<div style="margin-top: 1rem;">
+  <p style="font-weight:bold; color:#333;">📤 Κοινοποίησε το προϊόν:</p>
+  <div style="display: flex; justify-content: center; gap: 10px; align-items: center; margin-top: 5px;">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://cateyenail.github.io/THEONESTORE/" target="_blank" title="Κοινοποίηση στο Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="32" height="32">
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://cateyenail.github.io/THEONESTORE/&text=Δες%20αυτό%20το%20προϊόν!" target="_blank" title="Κοινοποίηση στο Twitter">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="32" height="32">
+    </a>
+    <a href="https://api.whatsapp.com/send?text=Δες%20αυτό%20το%20προϊόν!%20https://cateyenail.github.io/THEONESTORE/" target="_blank" title="Κοινοποίηση στο WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="32" height="32">
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" title="Δες το στο Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="32" height="32">
+    </a>
+  </div>
+</div>
+
     </section>
   </main>
+
 
   <!-- 🔹 Κριτικές Πελατών -->
   <section style="background: rgba(255,255,255,0.9); border-radius: 20px; max-width: 700px; margin: 2rem auto; padding: 1.5rem; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
@@ -140,7 +185,7 @@
   <!-- 🔹 Εικονίδιο PayPal -->
   <section style="text-align: center; margin-bottom: 2rem;">
     <p style="color:#333; font-size:1rem;">Πληρωμή με ασφάλεια μέσω:</p>
-    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="Ασφαλής Πληρωμή με PayPal" width="120">
+    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="Ασφαλής Πληρωμή με PayPal" width="120" />
   </section>
 
   <!-- 🔹 Ποιοι είμαστε -->
@@ -150,7 +195,8 @@
       Είμαστε μια νέα ελληνική επιχείρηση με πάθος για την τεχνολογία και τη σωστή εξυπηρέτηση. Στο <strong>The One Store</strong> επιλέγουμε προσεκτικά κάθε προϊόν και διασφαλίζουμε ότι θα το λάβεις έγκαιρα και με ασφάλεια. Αγοράζεις εύκολα και γρήγορα μέσω PayPal.
     </p>
   </section>
-
+<br>
+<br>
   <!-- 🔹 Script Χρονόμετρο -->
   <script>
     const countdownElement = document.getElementById("countdown");

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://i.postimg.cc/7Znjydx5/THE-STORE.png" type="image/png">
+  <title>The One Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
+      background-size: 1600% 1600%;
+      animation: rainbow 30s ease infinite;
+      text-align: center;
+      padding-bottom: 80px;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      animation: glowText 3s ease-in-out infinite alternate;
+      letter-spacing: 2px;
+    }
+
+    @keyframes glowText {
+      0% {
+        color: #ffffff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff00cc, 0 0 15px #ff00cc;
+      }
+      100% {
+        color: #ffccff;
+        text-shadow: 0 0 8px #cc00ff, 0 0 20px #cc00ff, 0 0 30px #cc00ff;
+      }
+    }
+
+    main {
+      margin-top: 120px;
+      padding: 1rem;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 20px;
+      margin: auto;
+      padding: 1.5rem;
+      max-width: 450px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .product-card h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: #444;
+      padding: 0 1rem;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #28a745;
+      margin: 1rem 0;
+    }
+
+    button {
+      background-color: #0070ba;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #005f99;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(255,255,255,0.8);
+      backdrop-filter: blur(5px);
+      padding: 0.8rem;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    }
+
+    #countdown {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ff0066;
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .product-card {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      .price {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The One Store</h1>
+  </header>
+
+  <!-- 🔽 Banner καλωσορίσματος -->
+  <div style="background-color: rgba(255, 255, 255, 0.85); padding: 1rem 2rem; margin-top: 80px; margin-bottom: -40px; border-radius: 20px; max-width: 800px; margin-left: auto; margin-right: auto; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
+    <h2 style="color: #333; font-size: 1.4rem; margin-bottom: 0.5rem;">🎉 Καλώς ήρθες στο The One Store!</h2>
+    <p style="color: #444; font-size: 1rem;">
+      Εδώ θα βρεις ένα μοναδικο προϊόν με άμεση αγορά μέσω PayPal. Δες τις λεπτομέρειες κάθε προϊόντος και πάτησε <strong>«Αγόρασέ το»</strong> για να ολοκληρώσεις τη συναλλαγή με ασφάλεια και ταχύτητα. Η αλλαγή των κάθε προϊόντος θα γίνετε με την λήξη του χρονομέτρου για αυτό όσοι προλάβετε το προϊόν. 
+    </p>
+    <br>
+    <p><strong>Αλλαγή Προϊόν σε:</strong></p>
+    <!-- 🕒 Χρονόμετρο -->
+    <div id="countdown">Φόρτωση χρόνου...</div>
+  </div>
+
+  <main>
+    <section class="product-card">
+      <img src="https://i.postimg.cc/MG1f90xb/Screenshot-2025-07-29-22-13-56-361-edit-com-einnovation-temu.jpg" alt="Μίνι προτζεκτέρ 1080P">
+      <h2>Μίνι προτζέκτορας 1080P</h2>
+      <p class="description">Συμβατό με κινητά τηλέφωνα, USB και SD είσοδοι, αναλογία 16:9, με τηλεχειριστήριο, κατάλληλο για σινεμά στο σπίτι.</p>
+      <p class="price">Τιμή: 39,99€</p>
+      <form action="https://www.paypal.com/ncp/payment/MQE95AJLVL9AN" method="get" target="_blank">
+        <button type="submit">Αγόρασέ το μέσω PayPal</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <button onclick="alert('Εδώ θα εμφανίζεται το ιστορικό πωλήσεων.')">📜 Ιστορικό Πωλήσεων</button>
+  </footer>
+
+  <script>
+    // Ορισμός ημερομηνίας λήξης (7 ημέρες από τώρα)
+    const countdownElement = document.getElementById("countdown");
+    const deadline = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = deadline - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "⏳ Ο χρόνος έληξε!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `⏳ Απομένουν: ${days} ημέρες ${hours} ώρες ${minutes} λεπτά ${seconds} δευτερόλεπτα`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
